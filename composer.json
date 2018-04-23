@@ -1,0 +1,21 @@
+{
+    "name": "empyrean/breadcrumbs",
+    "description": "Creates a breadcrumbs path to your current location.",
+
+    "homepage": "https://github.com/empyreanmw/breadcrumbs",
+    "license": "MIT",
+    "authors": [{
+        "name": "Zeljko Bogicevic",
+        "email": "empyreanmw@gmail.com",
+        "role": "Developer"
+    }],
+    "require": {
+        "php": ">=7.0.0",
+        "laravel/framework": "^5.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "empyrean\\breadcrumbs\\": "src"
+        }
+    }
+}
