@@ -10,10 +10,9 @@ composer require empyrean/breadcrumbs
 ```
 If you want the stylezation that comes with this package, you need to run
 ```
-php artisan vendor:publish
+php artisan vendor:publish (this will add a vendor/breadcrumbs/breadcrumbs.css file to you public folder)
 ```
 After this just include the link to the css file on any on page you want breadcrumbs to show up.
-php artisan vendor:publish (this will add a vendor/breadcrumbs/breadcrumbs.css file to you public folder). 
 
 You will also need to have correct APP_NAME setup in your env file, in order for this package to work properly.
 # Usage
