@@ -17,5 +17,15 @@
         "psr-4": {
             "empyrean\\breadcrumbs\\": "src"
         }
+    },
+    "extra": {
+    "laravel": {
+        "providers": [
+            "empyrean\\breadcrumbs\\BreadcrumbsServiceProvider"
+        ],
+        "aliases": {
+            "Breadcrumb": "empyrean\\breadcrumbs\\facade\\breadcrumb"
+        }
     }
+}
 }
