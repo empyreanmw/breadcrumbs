@@ -24,7 +24,7 @@
             "empyrean\\breadcrumbs\\BreadcrumbsServiceProvider"
         ],
         "aliases": {
-            "Breadcrumb": "empyrean\\breadcrumbs\\facade\\breadcrumb"
+            "Breadcrumb": "empyrean\\breadcrumbs\\facade\\Breadcrumb"
         }
     }
 }
