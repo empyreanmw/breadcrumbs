@@ -5,13 +5,13 @@ namespace  empyrean\breadcrumbs;
 use Illuminate\Support\Facades\URL;
 
 
-class Builder
+abstract class Builder
 {
     protected $url;
     protected $appName;
     protected $newpath;
     protected $pageDelimiter = "-";
-    protected $pagesArray = [];
+    protected $parsedPath = [];
 
     public function __construct()
     {
@@ -19,14 +19,16 @@ class Builder
         $this->appName = strtolower(env('APP_NAME'));
     }
 
-    protected function parsedPath()
+    public abstract function build();
+
+    protected function removeDomain()
     {
         return str_replace('http://'.$this->appName,'', $this->url);
     }
 
     protected function splitPath()
     {
-        $explodedPath = explode('/', $this->parsedPath());
+        $explodedPath = explode('/', $this->removeDomain());
 
         array_shift($explodedPath);
 
@@ -61,36 +63,4 @@ class Builder
 
         return str_replace_last('/', '', $this->newpath); 
     }
-
-    protected function arrayOfPages()
-    {
-        foreach ($this->splitPath() as $page)
-        {
-            $this->pagesArray[] = rtrim($this->buildPageName($page));
-        }
-
-        return $this->pagesArray; 
-    }
-
-    protected function html()
-    {
-        $link="";
-
-        foreach ($this->splitPath() as $key => $page)
-        {
-            $numberOfPages= count($this->splitPath());
-            $link .=$page."/";
-
-            if($key == $numberOfPages - 1)
-            {
-                $this->newpath .= '<li class="breadcrumb-item active">'.$this->buildPageName($page).'</li>';
-                continue;
-            }   
-
-            $this->newpath .= '<li class="breadcrumb-item"><a href="/'.$link.'">'. $this->buildPageName($page).'</a></li>';
-        }
-
-        return '<ol class="breadcrumb">'.$this->newpath.'</ol>';
-    }
-
 }

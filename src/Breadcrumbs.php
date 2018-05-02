@@ -4,20 +4,15 @@ namespace  empyrean\breadcrumbs;
 
 use Illuminate\Support\Facades\URL;
 
-class Breadcrumbs extends Builder
+class Breadcrumbs
 {
-    public function build()
-    {
-        return $this->connectPages();
-    }
-
     public function buildHtml()
     {
-        return $this->html();
+        return (new HtmlBreadcrumbs)->build();
     }
 
-    public function buildArrayOfPages()
+    public function buildParsedPath()
     {
-        return $this->arrayOfPages();
+        return (new ParsedPath)->build();
     }
 }
