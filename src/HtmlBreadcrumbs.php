@@ -15,13 +15,13 @@ class HtmlBreadcrumbs extends Builder
 
             if($key == $numberOfPages - 1)
             {
-                $this->newpath .= '<li class="breadcrumb-item active">'.$this->buildPageName($page).'</li>';
+                $this->newPath .= '<li class="breadcrumb-item active">'.$this->buildPageName($page).'</li>';
                 continue;
             }   
 
-            $this->newpath .= '<li class="breadcrumb-item"><a href="/'.$link.'">'. $this->buildPageName($page).'</a></li>';
+            $this->newPath .= '<li class="breadcrumb-item"><a href="/'.$link.'">'. $this->buildPageName($page).'</a></li>';
         }
 
-        return '<ol class="breadcrumb">'.$this->newpath.'</ol>';
+        return '<ol class="breadcrumb">'.$this->newPath.'</ol>';
     }
 }

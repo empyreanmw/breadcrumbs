@@ -9,7 +9,7 @@ abstract class Builder
 {
     protected $url;
     protected $appName;
-    protected $newpath;
+    protected $newPath;
     protected $pageDelimiter = "-";
     protected $parsedPath = [];
 
@@ -44,14 +44,14 @@ abstract class Builder
 
     protected function buildPageName($page)
     {
-        $result="";
+        $newPageName="";
 
         foreach($this->checkForMultipleWords($page) as $word)   
         {
-            $result.=  ucfirst($word)." ";
+            $newPageName.=  ucfirst($word)." ";
         }
 
-        return $result;
+        return $newPageName;
     }
 
     protected function connectPages()
