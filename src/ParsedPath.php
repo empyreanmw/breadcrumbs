@@ -10,11 +10,11 @@ class ParsedPath extends Builder
             $this->parsedPath[] = rtrim($this->buildPageName($page));
         }
 
-        return $this->parsedPath; 
+        return $this; 
     }
 
     public function format(FormatInterface $format)
     {
-	return $format->setUp($this->parsedPath, $this->links())
+	return $format->setUp($this->parsedPath, $this->links());
     }
 }
