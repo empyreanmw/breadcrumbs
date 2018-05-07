@@ -27,7 +27,7 @@
             "Breadcrumb": "empyrean\\breadcrumbs\\facade\\Breadcrumb",
             "Collection": "empyrean\\breadcrumbs\\facade\\CollectionFormat",
             "Array": "empyrean\\breadcrumbs\\facade\\ArrayFormat",
-            "Json": "empyrean\\breadcrumbs\\facade\\JsonFormat",
+            "Json": "empyrean\\breadcrumbs\\facade\\JsonFormat"
         }
     }
 }
