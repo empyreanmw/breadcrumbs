@@ -7,9 +7,10 @@ use Illuminate\Support\Facades\URL;
 
 abstract class Builder
 {
+    protected $links = [];
     protected $url;
     protected $appName;
-    protected $newPath;
+    protected $newpath;
     protected $pageDelimiter = "-";
     protected $parsedPath = [];
 
@@ -44,14 +45,14 @@ abstract class Builder
 
     protected function buildPageName($page)
     {
-        $newPageName="";
+        $result="";
 
         foreach($this->checkForMultipleWords($page) as $word)   
         {
-            $newPageName.=  ucfirst($word)." ";
+            $result.=  ucfirst($word)." ";
         }
 
-        return $newPageName;
+        return $result;
     }
 
     protected function connectPages()
@@ -63,4 +64,20 @@ abstract class Builder
 
         return str_replace_last('/', '', $this->newpath); 
     }
+
+    public function links()
+    {
+        foreach ($this->splitPath() as $key => $page) {
+            if ($key != 0) {
+                $this->links[] = $this->links[$key-1] .'/'.$page;
+            }
+            else{
+                $this->links[] = '/'. $page;
+            }
+
+        }
+
+        return $this->links;
+    }
 }
+

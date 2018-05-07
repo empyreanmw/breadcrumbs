@@ -12,4 +12,9 @@ class ParsedPath extends Builder
 
         return $this->parsedPath; 
     }
+
+    public function format(FormatInterface $format)
+    {
+	return $format->setUp($this->parsedPath, $this->links())
+    }
 }
