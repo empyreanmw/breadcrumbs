@@ -10,7 +10,7 @@ abstract class Builder
     protected $links = [];
     protected $url;
     protected $appName;
-    protected $newpath;
+    protected $newPath;
     protected $pageDelimiter = "-";
     protected $parsedPath = [];
 
@@ -59,10 +59,10 @@ abstract class Builder
     {
         foreach ($this->splitPath() as $page)
         {
-            $this->newpath .= $this->buildPageName($page). "/ ";
+            $this->newPath .= $this->buildPageName($page). "/ ";
         }
 
-        return str_replace_last('/', '', $this->newpath); 
+        return str_replace_last('/', '', $this->newPath); 
     }
 
     public function links()
