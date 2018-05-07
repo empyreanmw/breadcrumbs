@@ -25,9 +25,9 @@
         ],
         "aliases": {
             "Breadcrumb": "empyrean\\breadcrumbs\\facade\\Breadcrumb",
-            "Collection": "empyrean\\breadcrumbs\\facade\\CollectionFormat",
-            "Array": "empyrean\\breadcrumbs\\facade\\ArrayFormat",
-            "Json": "empyrean\\breadcrumbs\\facade\\JsonFormat"
+            "Collection": "empyrean\\breadcrumbs\\CollectionFormat",
+            "Array": "empyrean\\breadcrumbs\\ArrayFormat",
+            "Json": "empyrean\\breadcrumbs\\JsonFormat"
         }
     }
 }
