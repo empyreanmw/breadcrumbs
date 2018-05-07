@@ -24,7 +24,10 @@
             "empyrean\\breadcrumbs\\BreadcrumbsServiceProvider"
         ],
         "aliases": {
-            "Breadcrumb": "empyrean\\breadcrumbs\\facade\\Breadcrumb"
+            "Breadcrumb": "empyrean\\breadcrumbs\\facade\\Breadcrumb",
+            "Collection": "empyrean\\breadcrumbs\\facade\\CollectionFormat",
+            "Array": "empyrean\\breadcrumbs\\facade\\ArrayFormat",
+            "Json": "empyrean\\breadcrumbs\\facade\\JsonFormat",
         }
     }
 }
