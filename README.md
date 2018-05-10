@@ -20,10 +20,17 @@ You will be able to get your breadcrumbs in 3 different ways
 ```
 Breadcrumb::buildHtml() - this method will return full html 
 
-Breadcrumb::build() - this method will return unstylized version
-
-Breadcrumb::arrayOfPages() - this method will return array of parsed path in case you want to build your own html
+Breadcrumb::buildParsedPath()->get() - this will split current url by "/" and return an array in case you want to stylelize breadcrumbs on your own. 
 ```
+You can change the format of your parsedPath by calling format() method and then provding a format type like so:
+```
+Breadcrumb::buildParsedPath()->format(new Collection)->get()
+```
+You can also request links to all pages by calling withLinks() method like so:
+```
+Breadcrumb::buildParsedPath()->format(new Collection)->withLinks()->get()
+```
+
 # Licence
 
 MIT
