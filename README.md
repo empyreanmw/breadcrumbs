@@ -18,7 +18,6 @@ php artisan vendor:publish (this will also add a vendor/breadcrumbs/breadcrumbs.
 ```
 After this just include the link to the css file on any on page you want breadcrumbs to show up if you plan on using html provided by this package.
 
-You will also need to have correct APP_NAME setup in your env file, in order for this package to work properly.
 # Usage
 You will be able to get your breadcrumbs in 3 different ways
 ```

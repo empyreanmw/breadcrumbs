@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\URL;
 abstract class Builder
 {
     protected $links = [];
-    protected $url;
+    protected $basePath;
     protected $appName;
     protected $newPath;
     protected $pageDelimiter = "-";
@@ -16,20 +16,15 @@ abstract class Builder
 
     public function __construct()
     {
-        $this->url = URL::current();
         $this->appName = strtolower(env('APP_NAME'));
+        $this->basePath = request()->getPathInfo();
     }
 
     public abstract function build();
 
-    protected function removeDomain()
-    {
-        return str_replace('http://'.$this->appName,'', $this->url);
-    }
-
     protected function splitPath()
     {
-        $explodedPath = explode('/', $this->removeDomain());
+        $explodedPath = explode('/', $this->basePath);
 
         array_shift($explodedPath);
 
@@ -47,7 +42,7 @@ abstract class Builder
     {
         $result="";
 
-        foreach($this->checkForMultipleWords($page) as $word)   
+        foreach($this->checkForMultipleWords($page) as $word)
         {
             $result.=  ucfirst($word)." ";
         }
@@ -62,7 +57,7 @@ abstract class Builder
             $this->newPath .= $this->buildPageName($page). "/ ";
         }
 
-        return str_replace_last('/', '', $this->newPath); 
+        return str_replace_last('/', '', $this->newPath);
     }
 
     public function links()
