@@ -2,17 +2,21 @@
 
 This is a Laravel package that will build up a nice presentation of your current url, more known as "Breadcrumbs"
 
+http://domain.com/admin/users/create-new-user will turn into this:
+
+![Alt text](https://i.imgur.com/FUWTr8V.png?raw=true "Title")
+
 # Installation
 
 Install Breadcrumbs by running:
 ```
 composer require empyrean/breadcrumbs
 ```
-If you want the stylezation that comes with this package, you need to run
+After that you will have to publish css files and BreadcrumbsServiceProvider by running:
 ```
-php artisan vendor:publish (this will add a vendor/breadcrumbs/breadcrumbs.css file to you public folder)
+php artisan vendor:publish (this will also add a vendor/breadcrumbs/breadcrumbs.css file to you public folder)
 ```
-After this just include the link to the css file on any on page you want breadcrumbs to show up.
+After this just include the link to the css file on any on page you want breadcrumbs to show up if you plan on using html provided by this package.
 
 You will also need to have correct APP_NAME setup in your env file, in order for this package to work properly.
 # Usage
